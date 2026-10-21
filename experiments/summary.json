@@ -1,0 +1,200 @@
+[
+  {
+    "run": "A_normal",
+    "label": "A. Normal operation",
+    "scenario": null,
+    "network_only": {
+      "detected": false,
+      "P": 1.0,
+      "R": 1.0,
+      "F1": 1.0,
+      "latency_s": null
+    },
+    "network_process": {
+      "detected": false,
+      "P": 1.0,
+      "R": 1.0,
+      "F1": 1.0,
+      "latency_s": null
+    },
+    "network_process_twin": {
+      "detected": false,
+      "P": 1.0,
+      "R": 1.0,
+      "F1": 1.0,
+      "latency_s": null
+    },
+    "full": {
+      "detected": false,
+      "P": 1.0,
+      "R": 1.0,
+      "F1": 1.0,
+      "latency_s": null
+    }
+  },
+  {
+    "run": "B_fdi_no_wm",
+    "label": "B. False data injection, watermark OFF",
+    "scenario": "false_data_injection",
+    "network_only": {
+      "detected": false,
+      "P": 0.0,
+      "R": 0.0,
+      "F1": 0.0,
+      "latency_s": null
+    },
+    "network_process": {
+      "detected": true,
+      "P": 0.8824,
+      "R": 1.0,
+      "F1": 0.9375,
+      "latency_s": 0.2
+    },
+    "network_process_twin": {
+      "detected": true,
+      "P": 0.8824,
+      "R": 1.0,
+      "F1": 0.9375,
+      "latency_s": 0.2
+    },
+    "full": {
+      "detected": true,
+      "P": 0.8824,
+      "R": 1.0,
+      "F1": 0.9375,
+      "latency_s": 0.2
+    }
+  },
+  {
+    "run": "C_wm_interf",
+    "label": "C. Watermark interference, watermark ON",
+    "scenario": "watermark_interference",
+    "network_only": {
+      "detected": false,
+      "P": 0.0,
+      "R": 0.0,
+      "F1": 0.0,
+      "latency_s": null
+    },
+    "network_process": {
+      "detected": false,
+      "P": 0.0,
+      "R": 0.0,
+      "F1": 0.0,
+      "latency_s": null
+    },
+    "network_process_twin": {
+      "detected": true,
+      "P": 1.0,
+      "R": 0.5556,
+      "F1": 0.7143,
+      "latency_s": 1.1
+    },
+    "full": {
+      "detected": true,
+      "P": 0.9362,
+      "R": 0.9778,
+      "F1": 0.9565,
+      "latency_s": 1.1
+    }
+  },
+  {
+    "run": "D_unauth_setpt",
+    "label": "D. Unauthorized setpoint modification",
+    "scenario": "unauthorized_setpoint",
+    "network_only": {
+      "detected": true,
+      "P": 0.8333,
+      "R": 1.0,
+      "F1": 0.9091,
+      "latency_s": 0.0
+    },
+    "network_process": {
+      "detected": true,
+      "P": 0.8333,
+      "R": 1.0,
+      "F1": 0.9091,
+      "latency_s": 0.0
+    },
+    "network_process_twin": {
+      "detected": true,
+      "P": 0.8333,
+      "R": 1.0,
+      "F1": 0.9091,
+      "latency_s": 0.0
+    },
+    "full": {
+      "detected": true,
+      "P": 0.8333,
+      "R": 1.0,
+      "F1": 0.9091,
+      "latency_s": 0.0
+    }
+  },
+  {
+    "run": "E_replay",
+    "label": "E. Command replay",
+    "scenario": "command_replay",
+    "network_only": {
+      "detected": true,
+      "P": 0.8696,
+      "R": 1.0,
+      "F1": 0.9302,
+      "latency_s": 0.5
+    },
+    "network_process": {
+      "detected": true,
+      "P": 0.8696,
+      "R": 1.0,
+      "F1": 0.9302,
+      "latency_s": 0.5
+    },
+    "network_process_twin": {
+      "detected": true,
+      "P": 0.8696,
+      "R": 1.0,
+      "F1": 0.9302,
+      "latency_s": 0.5
+    },
+    "full": {
+      "detected": true,
+      "P": 0.8696,
+      "R": 1.0,
+      "F1": 0.9302,
+      "latency_s": 0.5
+    }
+  },
+  {
+    "run": "F_coordinated",
+    "label": "F. Coordinated process+network",
+    "scenario": "coordinated",
+    "network_only": {
+      "detected": true,
+      "P": 0.8333,
+      "R": 1.0,
+      "F1": 0.9091,
+      "latency_s": 0.5
+    },
+    "network_process": {
+      "detected": true,
+      "P": 0.8333,
+      "R": 1.0,
+      "F1": 0.9091,
+      "latency_s": 0.5
+    },
+    "network_process_twin": {
+      "detected": true,
+      "P": 0.8333,
+      "R": 1.0,
+      "F1": 0.9091,
+      "latency_s": 0.5
+    },
+    "full": {
+      "detected": true,
+      "P": 0.8333,
+      "R": 1.0,
+      "F1": 0.9091,
+      "latency_s": 0.5
+    }
+  }
+]

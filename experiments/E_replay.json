@@ -1,0 +1,240 @@
+{
+  "label": "E. Command replay",
+  "config": {
+    "label": "E. Command replay",
+    "seed": 1337,
+    "scenario": "command_replay",
+    "scenario_params": {},
+    "watermark": true,
+    "watermark_config": {},
+    "attack_at": 60,
+    "attack_stop": 180,
+    "duration": 240,
+    "response_mode": "monitor",
+    "bin_s": 2.0,
+    "deviation_tags": [
+      "TIC-101.SP"
+    ]
+  },
+  "created": "2026-10-19T06:03:20.094+00:00",
+  "wall_time_s": 2.72,
+  "sim_duration_s": 240,
+  "samples": 2400,
+  "overall": {
+    "tp": 60,
+    "fp": 9,
+    "tn": 51,
+    "fn": 0,
+    "precision": 0.8696,
+    "recall": 1.0,
+    "f1": 0.9302,
+    "detection_latency_s": 0.5,
+    "windows": 120,
+    "attack_windows": 60,
+    "process_deviation_rms": 0.0,
+    "process_deviation_max": 0.0,
+    "recovery_time_s": 0.0,
+    "detected": true
+  },
+  "by_detector_config": {
+    "network_only": {
+      "tp": 60,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8696,
+      "recall": 1.0,
+      "f1": 0.9302,
+      "detection_latency_s": 0.5,
+      "windows": 120,
+      "attack_windows": 60,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": 0.0,
+      "detected": true
+    },
+    "network_process": {
+      "tp": 60,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8696,
+      "recall": 1.0,
+      "f1": 0.9302,
+      "detection_latency_s": 0.5,
+      "windows": 120,
+      "attack_windows": 60,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": 0.0,
+      "detected": true
+    },
+    "network_process_twin": {
+      "tp": 60,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8696,
+      "recall": 1.0,
+      "f1": 0.9302,
+      "detection_latency_s": 0.5,
+      "windows": 120,
+      "attack_windows": 60,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": 0.0,
+      "detected": true
+    },
+    "full": {
+      "tp": 60,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8696,
+      "recall": 1.0,
+      "f1": 0.9302,
+      "detection_latency_s": 0.5,
+      "windows": 120,
+      "attack_windows": 60,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": 0.0,
+      "detected": true
+    }
+  },
+  "scenario": "command_replay",
+  "watermark": true,
+  "attack_window": [
+    60,
+    180
+  ],
+  "final_incidents": [
+    {
+      "id": "INC-00001",
+      "created": 105.6,
+      "updated": 222.6,
+      "wall_time": "2026-10-19T06:03:18.355+00:00",
+      "zone": "boiler",
+      "status": "resolved",
+      "severity": "high",
+      "classification": "Command replay",
+      "confidence": 0.9,
+      "assets": [
+        "ATK-01",
+        "PLC-1"
+      ],
+      "layers": [
+        "network"
+      ],
+      "rules": [
+        "NET-REPLAY",
+        "NET-UNAUTH-WRITE",
+        "NET-UNEXPECTED-FLOW",
+        "NET-UNKNOWN-DEVICE"
+      ],
+      "alert_ids": [
+        "ALR-00001",
+        "ALR-00002",
+        "ALR-00003",
+        "ALR-00004"
+      ],
+      "timeline": [
+        {
+          "t": 105.6,
+          "event": "incident opened",
+          "by": "ALR-00001"
+        },
+        {
+          "t": 105.6,
+          "event": "network: Unexpected device connection",
+          "alert": "ALR-00001",
+          "asset": "ATK-01",
+          "severity": "high"
+        },
+        {
+          "t": 105.6,
+          "event": "severity \u2192 high"
+        },
+        {
+          "t": 105.6,
+          "event": "classified: Unexpected network activity"
+        },
+        {
+          "t": 105.6,
+          "event": "network: Replayed command",
+          "alert": "ALR-00002",
+          "asset": "PLC-1",
+          "severity": "high"
+        },
+        {
+          "t": 105.6,
+          "event": "classified: Command replay"
+        },
+        {
+          "t": 105.6,
+          "event": "network: Unauthorized write",
+          "alert": "ALR-00003",
+          "asset": "PLC-1",
+          "severity": "high"
+        },
+        {
+          "t": 105.6,
+          "event": "network: Unexpected communication pattern",
+          "alert": "ALR-00004",
+          "asset": "PLC-1",
+          "severity": "medium"
+        },
+        {
+          "t": 237.7,
+          "event": "cleared: Unexpected device connection",
+          "alert": "ALR-00001"
+        },
+        {
+          "t": 237.7,
+          "event": "cleared: Unexpected communication pattern",
+          "alert": "ALR-00004"
+        },
+        {
+          "t": 242.7,
+          "event": "cleared: Replayed command",
+          "alert": "ALR-00002"
+        },
+        {
+          "t": 242.7,
+          "event": "cleared: Unauthorized write",
+          "alert": "ALR-00003"
+        },
+        {
+          "t": 272.7,
+          "event": "incident resolved (no active evidence)"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "preserve_evidence",
+          "target": "incident",
+          "reason": "snapshot telemetry, traffic and alerts"
+        },
+        {
+          "action": "reject_unauthorized_commands",
+          "target": "PLC-1",
+          "reason": "enforce PLC write allow-list"
+        },
+        {
+          "action": "quarantine_endpoint",
+          "target": "ATK-01",
+          "reason": "isolate the source of unauthorised traffic"
+        },
+        {
+          "action": "failover_secure_channel",
+          "target": "PLC-1",
+          "reason": "authenticated channel with anti-replay protection"
+        }
+      ],
+      "response_ids": [],
+      "resolved_at": 272.7,
+      "acknowledged": false
+    }
+  ],
+  "responses": []
+}

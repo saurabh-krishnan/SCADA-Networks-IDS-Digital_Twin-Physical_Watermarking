@@ -1,0 +1,12 @@
+{
+  "label": "False data injection (TT-101 bias -18C), watermark on",
+  "scenario": "false_data_injection",
+  "params": { "tag": "TT-101", "mode": "bias", "bias": -18.0 },
+  "watermark": true,
+  "seed": 1337,
+  "attack_at": 63,
+  "attack_stop": 151,
+  "duration": 210,
+  "response_mode": "monitor",
+  "bin_s": 2.0
+}

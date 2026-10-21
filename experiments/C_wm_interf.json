@@ -1,0 +1,264 @@
+{
+  "label": "C. Watermark interference, watermark ON",
+  "config": {
+    "label": "C. Watermark interference, watermark ON",
+    "seed": 1337,
+    "scenario": "watermark_interference",
+    "scenario_params": {},
+    "watermark": true,
+    "watermark_config": {},
+    "attack_at": 63,
+    "attack_stop": 151,
+    "duration": 210,
+    "response_mode": "monitor",
+    "bin_s": 2.0,
+    "deviation_tags": [
+      "TIC-101.SP"
+    ]
+  },
+  "created": "2026-10-19T06:03:14.939+00:00",
+  "wall_time_s": 2.45,
+  "sim_duration_s": 210,
+  "samples": 2100,
+  "overall": {
+    "tp": 44,
+    "fp": 3,
+    "tn": 57,
+    "fn": 1,
+    "precision": 0.9362,
+    "recall": 0.9778,
+    "f1": 0.9565,
+    "detection_latency_s": 1.1,
+    "windows": 105,
+    "attack_windows": 45,
+    "process_deviation_rms": 0.0,
+    "process_deviation_max": 0.0,
+    "recovery_time_s": 0.0,
+    "detected": true
+  },
+  "by_detector_config": {
+    "network_only": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 60,
+      "fn": 45,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "detection_latency_s": null,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": 0.0,
+      "detected": false
+    },
+    "network_process": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 60,
+      "fn": 45,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "detection_latency_s": null,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": 0.0,
+      "detected": false
+    },
+    "network_process_twin": {
+      "tp": 25,
+      "fp": 0,
+      "tn": 60,
+      "fn": 20,
+      "precision": 1.0,
+      "recall": 0.5556,
+      "f1": 0.7143,
+      "detection_latency_s": 1.1,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": 0.0,
+      "detected": true
+    },
+    "full": {
+      "tp": 44,
+      "fp": 3,
+      "tn": 57,
+      "fn": 1,
+      "precision": 0.9362,
+      "recall": 0.9778,
+      "f1": 0.9565,
+      "detection_latency_s": 1.1,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": 0.0,
+      "detected": true
+    }
+  },
+  "scenario": "watermark_interference",
+  "watermark": true,
+  "attack_window": [
+    63,
+    151
+  ],
+  "final_incidents": [
+    {
+      "id": "INC-00001",
+      "created": 109.1,
+      "updated": 199.5,
+      "wall_time": "2026-10-19T06:03:13.481+00:00",
+      "zone": "boiler",
+      "status": "resolved",
+      "severity": "critical",
+      "classification": "Telemetry replay / watermark interference",
+      "confidence": 0.955,
+      "assets": [
+        "P-101/FT-101",
+        "PT-101"
+      ],
+      "layers": [
+        "twin",
+        "watermark"
+      ],
+      "rules": [
+        "TWIN-PERSIST",
+        "WM-SUSPICIOUS"
+      ],
+      "alert_ids": [
+        "ALR-00001",
+        "ALR-00002",
+        "ALR-00003",
+        "ALR-00004",
+        "ALR-00005",
+        "ALR-00006"
+      ],
+      "timeline": [
+        {
+          "t": 109.1,
+          "event": "incident opened",
+          "by": "ALR-00001"
+        },
+        {
+          "t": 109.1,
+          "event": "twin: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00001",
+          "asset": "PT-101",
+          "severity": "medium"
+        },
+        {
+          "t": 109.1,
+          "event": "severity \u2192 medium"
+        },
+        {
+          "t": 109.1,
+          "event": "classified: False data injection (suspected)"
+        },
+        {
+          "t": 124.0,
+          "event": "watermark: Excessive watermark response error",
+          "alert": "ALR-00002",
+          "asset": "P-101/FT-101",
+          "severity": "high"
+        },
+        {
+          "t": 124.0,
+          "event": "severity \u2192 critical"
+        },
+        {
+          "t": 124.0,
+          "event": "classified: Telemetry replay / watermark interference"
+        },
+        {
+          "t": 124.2,
+          "event": "cleared: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00001"
+        },
+        {
+          "t": 129.5,
+          "event": "twin: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00003",
+          "asset": "PT-101",
+          "severity": "medium"
+        },
+        {
+          "t": 134.2,
+          "event": "cleared: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00003"
+        },
+        {
+          "t": 151.1,
+          "event": "twin: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00004",
+          "asset": "PT-101",
+          "severity": "medium"
+        },
+        {
+          "t": 160.4,
+          "event": "cleared: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00004"
+        },
+        {
+          "t": 162.5,
+          "event": "twin: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00005",
+          "asset": "PT-101",
+          "severity": "medium"
+        },
+        {
+          "t": 172.3,
+          "event": "cleared: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00005"
+        },
+        {
+          "t": 188.0,
+          "event": "twin: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00006",
+          "asset": "PT-101",
+          "severity": "medium"
+        },
+        {
+          "t": 192.2,
+          "event": "cleared: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00006"
+        },
+        {
+          "t": 202.6,
+          "event": "cleared: Excessive watermark response error",
+          "alert": "ALR-00002"
+        },
+        {
+          "t": 232.6,
+          "event": "incident resolved (no active evidence)"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "mark_suspicious",
+          "target": "PT-101",
+          "reason": "telemetry contradicts physics / watermark"
+        },
+        {
+          "action": "failover_secure_channel",
+          "target": "PLC-1",
+          "reason": "bypass a possible man-in-the-middle on the telemetry path"
+        },
+        {
+          "action": "preserve_evidence",
+          "target": "incident",
+          "reason": "snapshot telemetry, traffic and alerts"
+        }
+      ],
+      "response_ids": [],
+      "resolved_at": 232.6,
+      "acknowledged": false
+    }
+  ],
+  "responses": []
+}

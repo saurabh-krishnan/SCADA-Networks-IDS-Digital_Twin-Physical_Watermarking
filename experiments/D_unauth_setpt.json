@@ -1,0 +1,260 @@
+{
+  "label": "D. Unauthorized setpoint modification",
+  "config": {
+    "label": "D. Unauthorized setpoint modification",
+    "seed": 1337,
+    "scenario": "unauthorized_setpoint",
+    "scenario_params": {},
+    "watermark": true,
+    "watermark_config": {},
+    "attack_at": 63,
+    "attack_stop": 151,
+    "duration": 210,
+    "response_mode": "monitor",
+    "bin_s": 2.0,
+    "deviation_tags": [
+      "TIC-101.SP"
+    ]
+  },
+  "created": "2026-10-19T06:03:17.369+00:00",
+  "wall_time_s": 2.43,
+  "sim_duration_s": 210,
+  "samples": 2100,
+  "overall": {
+    "tp": 45,
+    "fp": 9,
+    "tn": 51,
+    "fn": 0,
+    "precision": 0.8333,
+    "recall": 1.0,
+    "f1": 0.9091,
+    "detection_latency_s": 0.0,
+    "windows": 105,
+    "attack_windows": 45,
+    "process_deviation_rms": 27.1882,
+    "process_deviation_max": 42.0,
+    "recovery_time_s": 0.2,
+    "detected": true
+  },
+  "by_detector_config": {
+    "network_only": {
+      "tp": 45,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "detection_latency_s": 0.0,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 27.1882,
+      "process_deviation_max": 42.0,
+      "recovery_time_s": 0.2,
+      "detected": true
+    },
+    "network_process": {
+      "tp": 45,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "detection_latency_s": 0.0,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 27.1882,
+      "process_deviation_max": 42.0,
+      "recovery_time_s": 0.2,
+      "detected": true
+    },
+    "network_process_twin": {
+      "tp": 45,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "detection_latency_s": 0.0,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 27.1882,
+      "process_deviation_max": 42.0,
+      "recovery_time_s": 0.2,
+      "detected": true
+    },
+    "full": {
+      "tp": 45,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "detection_latency_s": 0.0,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 27.1882,
+      "process_deviation_max": 42.0,
+      "recovery_time_s": 0.2,
+      "detected": true
+    }
+  },
+  "scenario": "unauthorized_setpoint",
+  "watermark": true,
+  "attack_window": [
+    63,
+    151
+  ],
+  "final_incidents": [
+    {
+      "id": "INC-00001",
+      "created": 108.0,
+      "updated": 197.0,
+      "wall_time": "2026-10-19T06:03:15.944+00:00",
+      "zone": "boiler",
+      "status": "resolved",
+      "severity": "critical",
+      "classification": "Unauthorized setpoint modification",
+      "confidence": 0.99,
+      "assets": [
+        "ATK-01",
+        "JT-101",
+        "PLC-1"
+      ],
+      "layers": [
+        "network",
+        "process"
+      ],
+      "rules": [
+        "NET-UNAUTH-WRITE",
+        "NET-UNEXPECTED-FLOW",
+        "NET-UNKNOWN-DEVICE",
+        "PROC-LIMIT",
+        "PROC-SP-MISMATCH"
+      ],
+      "alert_ids": [
+        "ALR-00001",
+        "ALR-00002",
+        "ALR-00003",
+        "ALR-00004",
+        "ALR-00005"
+      ],
+      "timeline": [
+        {
+          "t": 108.0,
+          "event": "incident opened",
+          "by": "ALR-00001"
+        },
+        {
+          "t": 108.0,
+          "event": "network: Unexpected device connection",
+          "alert": "ALR-00001",
+          "asset": "ATK-01",
+          "severity": "high"
+        },
+        {
+          "t": 108.0,
+          "event": "severity \u2192 high"
+        },
+        {
+          "t": 108.0,
+          "event": "classified: Unexpected network activity"
+        },
+        {
+          "t": 108.0,
+          "event": "network: Unauthorized write",
+          "alert": "ALR-00002",
+          "asset": "PLC-1",
+          "severity": "high"
+        },
+        {
+          "t": 108.0,
+          "event": "classified: Unauthorized setpoint modification"
+        },
+        {
+          "t": 108.0,
+          "event": "network: Unexpected communication pattern",
+          "alert": "ALR-00003",
+          "asset": "PLC-1",
+          "severity": "medium"
+        },
+        {
+          "t": 109.1,
+          "event": "process: Setpoint deviation from approved value",
+          "alert": "ALR-00004",
+          "asset": "PLC-1",
+          "severity": "high"
+        },
+        {
+          "t": 109.1,
+          "event": "severity \u2192 critical"
+        },
+        {
+          "t": 112.9,
+          "event": "process: Process limit exceeded",
+          "alert": "ALR-00005",
+          "asset": "JT-101",
+          "severity": "low"
+        },
+        {
+          "t": 200.1,
+          "event": "cleared: Setpoint deviation from approved value",
+          "alert": "ALR-00004"
+        },
+        {
+          "t": 200.1,
+          "event": "cleared: Process limit exceeded",
+          "alert": "ALR-00005"
+        },
+        {
+          "t": 209.1,
+          "event": "cleared: Unexpected device connection",
+          "alert": "ALR-00001"
+        },
+        {
+          "t": 209.1,
+          "event": "cleared: Unexpected communication pattern",
+          "alert": "ALR-00003"
+        },
+        {
+          "t": 214.1,
+          "event": "cleared: Unauthorized write",
+          "alert": "ALR-00002"
+        },
+        {
+          "t": 244.1,
+          "event": "incident resolved (no active evidence)"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "preserve_evidence",
+          "target": "incident",
+          "reason": "snapshot telemetry, traffic and alerts"
+        },
+        {
+          "action": "reject_unauthorized_commands",
+          "target": "PLC-1",
+          "reason": "enforce PLC write allow-list"
+        },
+        {
+          "action": "quarantine_endpoint",
+          "target": "ATK-01",
+          "reason": "isolate the source of unauthorised traffic"
+        },
+        {
+          "action": "restore_setpoint",
+          "target": "TIC-101.SP",
+          "reason": "return register to the operator-approved value"
+        }
+      ],
+      "response_ids": [],
+      "resolved_at": 244.1,
+      "acknowledged": false
+    }
+  ],
+  "responses": []
+}

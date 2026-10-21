@@ -1,0 +1,351 @@
+{
+  "label": "F. Coordinated process+network",
+  "config": {
+    "label": "F. Coordinated process+network",
+    "seed": 1337,
+    "scenario": "coordinated",
+    "scenario_params": {},
+    "watermark": true,
+    "watermark_config": {},
+    "attack_at": 63,
+    "attack_stop": 151,
+    "duration": 210,
+    "response_mode": "monitor",
+    "bin_s": 2.0,
+    "deviation_tags": [
+      "TIC-101.SP"
+    ]
+  },
+  "created": "2026-10-19T06:03:22.580+00:00",
+  "wall_time_s": 2.48,
+  "sim_duration_s": 210,
+  "samples": 2100,
+  "overall": {
+    "tp": 45,
+    "fp": 9,
+    "tn": 51,
+    "fn": 0,
+    "precision": 0.8333,
+    "recall": 1.0,
+    "f1": 0.9091,
+    "detection_latency_s": 0.5,
+    "windows": 105,
+    "attack_windows": 45,
+    "process_deviation_rms": 29.0474,
+    "process_deviation_max": 45.0,
+    "recovery_time_s": 0.2,
+    "detected": true
+  },
+  "by_detector_config": {
+    "network_only": {
+      "tp": 45,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "detection_latency_s": 0.5,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 29.0474,
+      "process_deviation_max": 45.0,
+      "recovery_time_s": 0.2,
+      "detected": true
+    },
+    "network_process": {
+      "tp": 45,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "detection_latency_s": 0.5,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 29.0474,
+      "process_deviation_max": 45.0,
+      "recovery_time_s": 0.2,
+      "detected": true
+    },
+    "network_process_twin": {
+      "tp": 45,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "detection_latency_s": 0.5,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 29.0474,
+      "process_deviation_max": 45.0,
+      "recovery_time_s": 0.2,
+      "detected": true
+    },
+    "full": {
+      "tp": 45,
+      "fp": 9,
+      "tn": 51,
+      "fn": 0,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "detection_latency_s": 0.5,
+      "windows": 105,
+      "attack_windows": 45,
+      "process_deviation_rms": 29.0474,
+      "process_deviation_max": 45.0,
+      "recovery_time_s": 0.2,
+      "detected": true
+    }
+  },
+  "scenario": "coordinated",
+  "watermark": true,
+  "attack_window": [
+    63,
+    151
+  ],
+  "final_incidents": [
+    {
+      "id": "INC-00001",
+      "created": 108.5,
+      "updated": 203.9,
+      "wall_time": "2026-10-19T06:03:21.109+00:00",
+      "zone": "boiler",
+      "status": "resolved",
+      "severity": "critical",
+      "classification": "Coordinated process and network attack",
+      "confidence": 0.998,
+      "assets": [
+        "ATK-01",
+        "JT-101",
+        "PLC-1",
+        "TT-101",
+        "boiler-loop"
+      ],
+      "layers": [
+        "network",
+        "process",
+        "twin"
+      ],
+      "rules": [
+        "NET-UNAUTH-WRITE",
+        "NET-UNEXPECTED-FLOW",
+        "NET-UNKNOWN-DEVICE",
+        "PROC-ENERGY",
+        "PROC-LIMIT",
+        "PROC-ROC",
+        "PROC-SP-MISMATCH",
+        "TWIN-PERSIST",
+        "TWIN-SUDDEN"
+      ],
+      "alert_ids": [
+        "ALR-00001",
+        "ALR-00002",
+        "ALR-00003",
+        "ALR-00004",
+        "ALR-00005",
+        "ALR-00006",
+        "ALR-00007",
+        "ALR-00008",
+        "ALR-00009",
+        "ALR-00010"
+      ],
+      "timeline": [
+        {
+          "t": 108.5,
+          "event": "incident opened",
+          "by": "ALR-00001"
+        },
+        {
+          "t": 108.5,
+          "event": "network: Unexpected device connection",
+          "alert": "ALR-00001",
+          "asset": "ATK-01",
+          "severity": "high"
+        },
+        {
+          "t": 108.5,
+          "event": "severity \u2192 high"
+        },
+        {
+          "t": 108.5,
+          "event": "classified: Unexpected network activity"
+        },
+        {
+          "t": 108.5,
+          "event": "network: Unauthorized write",
+          "alert": "ALR-00002",
+          "asset": "PLC-1",
+          "severity": "high"
+        },
+        {
+          "t": 108.5,
+          "event": "classified: Unauthorized setpoint modification"
+        },
+        {
+          "t": 108.5,
+          "event": "network: Unexpected communication pattern",
+          "alert": "ALR-00003",
+          "asset": "PLC-1",
+          "severity": "medium"
+        },
+        {
+          "t": 109.6,
+          "event": "process: Setpoint deviation from approved value",
+          "alert": "ALR-00004",
+          "asset": "PLC-1",
+          "severity": "high"
+        },
+        {
+          "t": 109.6,
+          "event": "severity \u2192 critical"
+        },
+        {
+          "t": 113.6,
+          "event": "process: Process limit exceeded",
+          "alert": "ALR-00005",
+          "asset": "JT-101",
+          "severity": "low"
+        },
+        {
+          "t": 125.7,
+          "event": "twin: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00006",
+          "asset": "TT-101",
+          "severity": "medium"
+        },
+        {
+          "t": 137.8,
+          "event": "twin: Sudden prediction error",
+          "alert": "ALR-00007",
+          "asset": "TT-101",
+          "severity": "high"
+        },
+        {
+          "t": 137.8,
+          "event": "classified: Coordinated process and network attack"
+        },
+        {
+          "t": 138.5,
+          "event": "process: Energy balance / redundancy violation",
+          "alert": "ALR-00008",
+          "asset": "boiler-loop",
+          "severity": "high"
+        },
+        {
+          "t": 141.8,
+          "event": "cleared: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00006"
+        },
+        {
+          "t": 196.1,
+          "event": "twin: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00009",
+          "asset": "TT-101",
+          "severity": "medium"
+        },
+        {
+          "t": 196.2,
+          "event": "process: Implausible process transition",
+          "alert": "ALR-00010",
+          "asset": "TT-101",
+          "severity": "medium"
+        },
+        {
+          "t": 200.1,
+          "event": "cleared: Setpoint deviation from approved value",
+          "alert": "ALR-00004"
+        },
+        {
+          "t": 200.1,
+          "event": "cleared: Process limit exceeded",
+          "alert": "ALR-00005"
+        },
+        {
+          "t": 200.1,
+          "event": "cleared: Sudden prediction error",
+          "alert": "ALR-00007"
+        },
+        {
+          "t": 202.9,
+          "event": "cleared: Implausible process transition",
+          "alert": "ALR-00010"
+        },
+        {
+          "t": 207.9,
+          "event": "cleared: Persistent residual (inconsistent with twin)",
+          "alert": "ALR-00009"
+        },
+        {
+          "t": 208.0,
+          "event": "cleared: Energy balance / redundancy violation",
+          "alert": "ALR-00008"
+        },
+        {
+          "t": 209.6,
+          "event": "cleared: Unexpected device connection",
+          "alert": "ALR-00001"
+        },
+        {
+          "t": 209.6,
+          "event": "cleared: Unexpected communication pattern",
+          "alert": "ALR-00003"
+        },
+        {
+          "t": 214.6,
+          "event": "cleared: Unauthorized write",
+          "alert": "ALR-00002"
+        },
+        {
+          "t": 244.6,
+          "event": "incident resolved (no active evidence)"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "preserve_evidence",
+          "target": "incident",
+          "reason": "snapshot telemetry, traffic and alerts"
+        },
+        {
+          "action": "reject_unauthorized_commands",
+          "target": "PLC-1",
+          "reason": "enforce PLC write allow-list"
+        },
+        {
+          "action": "quarantine_endpoint",
+          "target": "ATK-01",
+          "reason": "isolate the source of unauthorised traffic"
+        },
+        {
+          "action": "restore_setpoint",
+          "target": "TIC-101.SP",
+          "reason": "return register to the operator-approved value"
+        },
+        {
+          "action": "mark_suspicious",
+          "target": "TT-101",
+          "reason": "telemetry contradicts physics / watermark"
+        },
+        {
+          "action": "failover_secure_channel",
+          "target": "PLC-1",
+          "reason": "bypass a possible man-in-the-middle on the telemetry path"
+        },
+        {
+          "action": "enter_safe_state",
+          "target": "boiler",
+          "reason": "multiple layers indicate an active attack"
+        }
+      ],
+      "response_ids": [],
+      "resolved_at": 244.6,
+      "acknowledged": false
+    }
+  ],
+  "responses": []
+}

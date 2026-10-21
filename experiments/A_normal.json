@@ -1,0 +1,113 @@
+{
+  "label": "A. Normal operation",
+  "config": {
+    "label": "A. Normal operation",
+    "seed": 1337,
+    "scenario": null,
+    "scenario_params": {},
+    "watermark": true,
+    "watermark_config": {},
+    "attack_at": 60,
+    "attack_stop": 150,
+    "duration": 180,
+    "response_mode": "monitor",
+    "bin_s": 2.0,
+    "deviation_tags": [
+      "TIC-101.SP"
+    ]
+  },
+  "created": "2026-10-19T06:03:10.031+00:00",
+  "wall_time_s": 2.2,
+  "sim_duration_s": 180,
+  "samples": 1800,
+  "overall": {
+    "tp": 0,
+    "fp": 0,
+    "tn": 90,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "detection_latency_s": null,
+    "windows": 90,
+    "attack_windows": 0,
+    "process_deviation_rms": 0.0,
+    "process_deviation_max": 0.0,
+    "recovery_time_s": null,
+    "detected": false
+  },
+  "by_detector_config": {
+    "network_only": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 90,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "detection_latency_s": null,
+      "windows": 90,
+      "attack_windows": 0,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": null,
+      "detected": false
+    },
+    "network_process": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 90,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "detection_latency_s": null,
+      "windows": 90,
+      "attack_windows": 0,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": null,
+      "detected": false
+    },
+    "network_process_twin": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 90,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "detection_latency_s": null,
+      "windows": 90,
+      "attack_windows": 0,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": null,
+      "detected": false
+    },
+    "full": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 90,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "detection_latency_s": null,
+      "windows": 90,
+      "attack_windows": 0,
+      "process_deviation_rms": 0.0,
+      "process_deviation_max": 0.0,
+      "recovery_time_s": null,
+      "detected": false
+    }
+  },
+  "scenario": null,
+  "watermark": true,
+  "attack_window": [
+    60,
+    150
+  ],
+  "final_incidents": [],
+  "responses": []
+}
